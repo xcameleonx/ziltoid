@@ -1,3 +1,3 @@
-# My Awesome Game
+# Ziltoid and The Quest for Coffee
 
-This is My Awesome 16 Bit Cartridge game for mega Drive
+Mega Drive platformer based on the albums Ziltoid The Omniscient and Z2 - Dark Matters by Devin Townsend
