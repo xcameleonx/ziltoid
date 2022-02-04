@@ -1,6 +1,6 @@
 # Ziltoid and The Quest for Coffee
 
-Mega Drive platformer based on the albums Ziltoid The Omniscient and Z^2^ - Dark Matters by Devin Townsend
+Mega Drive platformer based on the albums Ziltoid The Omniscient and Z<sup>2</sup> - Dark Matters by Devin Townsend
 
 Inspired by the Earthworm Jim games.
 
