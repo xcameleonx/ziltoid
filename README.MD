@@ -22,9 +22,11 @@ Like the "Vs Psycrow" levels from Earthworm Jim (Hyperdrive / N9 / Ziltoid Goes 
 
 End Credits (The Greys)
 
-Controls:
-A: Jump
-B: Throw Poozer (basic attack)
-C: Special (collect coffee to fill the bar, then unleash a guitar attack).
+## Controls ##
 
-X, Y, Z: Ziltoid insults the player.
+| Button      | Action                             |
+| ----------- | ---------------------------------- |
+| A           | Jump                               |
+| B           | Throw Poozer (basic attack)        |
+| C           | Special (Collect coffee cups, then unleash a guitar attak) |
+| X, Y, Z     | ziltoid insults the playe          |
