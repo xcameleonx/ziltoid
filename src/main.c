@@ -5,21 +5,28 @@
 #include <genesis.h>
 #include "global.h"
 #include "title.h"
+#include "options.h"
 
 int main()
 {
-    Game game;
-    Init(&game);
+    Init();
     
     while(TRUE)
     {
         //For versions prior to SGDK 1.60 use VDP_waitVSync instead.
         switch(game.scene) {
             case GAME_TITLE:
-                GameTitle(&game);
+            {
+                KLog_U1("entering TITLE scene", 1);
+                GameTitle();
                 break;
+            }
             case GAME_OPTION:
+            {
+                KLog_U1("entering OPTIONS scene", 1);
+                GameOptions();
                 break;
+            }
             case GAME_PLAY:
                 break;
             case GAME_OVER:

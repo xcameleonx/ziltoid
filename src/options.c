@@ -1,35 +1,32 @@
 /**
  * Ziltoid and The Quest for Coffee
- * title.c
- * Basically just manage the title screen.
+ * options.c
+ * Basically just manage the options screen.
  **/
 
 #include <genesis.h>
 #include "global.h"
-#include "title.h"
+#include "options.h"
 
-s16 t_frames = 0;
-void GameTitle()
+s16 o_frames = 0;
+void GameOptions()
 {
-    GameTitle_Init();
+    GameOptions_Init();
 	while (game.loop)
     {
-        JOY_setEventHandler(GameTitle_HandleInput);
         if(game.exitCurrScene) 
         {
             SPR_reset();
             SPR_clear();
             game.loop = FALSE;
-            game.scene = GAME_OPTION;
+            game.scene = GAME_TITLE;
         }
-        GameTitle_Render();
-        t_frames++;       
-        SPR_update();
-        VDP_waitVSync();
+        GameOptions_Render();
+        o_frames++;
     }
 }
 
-void GameTitle_Init() 
+void GameOptions_Init() 
 {
     SPR_init();
     SYS_disableInts();
@@ -47,32 +44,31 @@ void GameTitle_Init()
     game.exitCurrScene = FALSE;
 }
 
-void GameTitle_HandleInput(u16 joy, u16 changed, u16 state)
+void GameOptions_HandleInput(u16 joy, u16 changed, u16 state)
 {
     Global_HandleInput(joy, changed, state);
-    KLog_U1("Joy  ", joy);
-    KLog_U1("Changed  ", changed);
-    KLog_U1("State ", state);
     if(changed & state & BUTTON_START) 
     {
         game.exitCurrScene = TRUE;
-        KLog_U1("Pressed START ", 1);
     }
 }
 
-void GameTitle_Render() 
+void GameOptions_Render() 
 {
-    if (t_frames >= 60)
+    if (o_frames >= 60)
     {
         SYS_disableInts();
-        VDP_drawText("PRESS START BUTTON " , 10, 20);
+        VDP_drawText("I AM THE OPTIONS SCREEN", 10, 20);
         SYS_enableInts();
-        t_frames = 0;
+        JOY_setEventHandler(GameOptions_HandleInput);
+        o_frames = 0;
     }
-    else if (t_frames == 30)
+    else if (o_frames == 30)
     {
         SYS_disableInts();
         VDP_clearTextArea(10, 20, 18, 1);
         SYS_enableInts();
     }
+    SPR_update();
+    VDP_waitVSync();
 }

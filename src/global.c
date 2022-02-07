@@ -6,7 +6,7 @@ void Global_HandleInput(u16 joy, u16 changed, u16 state)
     ;
 }
 
-void Init(Game* game) 
+void Init() 
 {
     SYS_disableInts();
 
@@ -14,5 +14,5 @@ void Init(Game* game)
     VDP_setScreenWidth320();
 
     SYS_enableInts();
-    game->scene = GAME_TITLE;
+    game.scene = GAME_TITLE;
 }
