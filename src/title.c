@@ -14,7 +14,7 @@ void GameTitle()
     GameTitle_Init();
 	while (game.loop)
     {
-        JOY_setEventHandler(GameTitle_HandleInput);
+        JOY_setEventHandler(&GameTitle_HandleInput);
         if(game.exitCurrScene) 
         {
             SPR_reset();
@@ -49,14 +49,21 @@ void GameTitle_Init()
 
 void GameTitle_HandleInput(u16 joy, u16 changed, u16 state)
 {
+    KLog_U1("Entered the input handler: TITLE  ", 1);
+    
     Global_HandleInput(joy, changed, state);
-    KLog_U1("Joy  ", joy);
-    KLog_U1("Changed  ", changed);
-    KLog_U1("State ", state);
-    if(changed & state & BUTTON_START) 
-    {
-        game.exitCurrScene = TRUE;
-        KLog_U1("Pressed START ", 1);
+    if (joy == JOY_1)
+	{
+		if (state & BUTTON_START)
+		{
+			//player 1 press START button
+            game.exitCurrScene = TRUE;
+            KLog_U1("Pressed START ", 1);
+		}
+		else if (changed & BUTTON_START)
+		{
+			//player 1 released START button	
+		}
     }
 }
 

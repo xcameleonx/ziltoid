@@ -14,6 +14,7 @@ void GameOptions()
     GameOptions_Init();
 	while (game.loop)
     {
+        JOY_setEventHandler(&GameOptions_HandleInput);
         if(game.exitCurrScene) 
         {
             SPR_reset();
@@ -46,10 +47,21 @@ void GameOptions_Init()
 
 void GameOptions_HandleInput(u16 joy, u16 changed, u16 state)
 {
+    KLog_U1("Entered the input handler: OPTIONS  ", 1);
+    
     Global_HandleInput(joy, changed, state);
-    if(changed & state & BUTTON_START) 
-    {
-        game.exitCurrScene = TRUE;
+    if (joy == JOY_1)
+	{
+		if (state & BUTTON_START)
+		{
+			//player 1 press START button
+            game.exitCurrScene = TRUE;
+            KLog_U1("Pressed START ", 1);
+		}
+		else if (changed & BUTTON_START)
+		{
+			//player 1 released START button	
+		}
     }
 }
 
@@ -66,7 +78,7 @@ void GameOptions_Render()
     else if (o_frames == 30)
     {
         SYS_disableInts();
-        VDP_clearTextArea(10, 20, 18, 1);
+        VDP_clearTextArea(10, 20, 22, 1);
         SYS_enableInts();
     }
     SPR_update();

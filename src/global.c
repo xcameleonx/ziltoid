@@ -14,5 +14,5 @@ void Init()
     VDP_setScreenWidth320();
 
     SYS_enableInts();
-    game.scene = GAME_TITLE;
+    game.scene = GAME_OPTION;
 }
