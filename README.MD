@@ -22,7 +22,7 @@ A very loose interpretation of the Ziltoid story, basically split in to three ac
 
 
 + Tutorial ([From Sleep Awake - After "Yes" by Ziltoid](https://youtu.be/_JjsNeHaoN8?t=38))
-+ Bonus Stages - Like the "Vs Psycrow" levels from Earthworm Jim ([Hyperdrive](https://www.youtube.com/watch?v=H5BqyluKkk0) / [N9](https://www.youtube.com/watch?v=Bk-Ky8lqbAU) / [Ziltoid Goes Home](https://www.youtube.com/watch?v=UVKnCeKLPQg))
++ Bonus Stage: "Catch that Poozer!" - Like the "Vs Psycrow" levels from Earthworm Jim ([Hyperdrive](https://www.youtube.com/watch?v=H5BqyluKkk0) / [N9](https://www.youtube.com/watch?v=Bk-Ky8lqbAU) / [Ziltoid Goes Home](https://www.youtube.com/watch?v=UVKnCeKLPQg))
 + Title ( Z<sup>2</sup> - ["Indeed!" section](https://youtu.be/zk2_JjbPY5U?t=135))
 + Options ([Wandering Eye](https://www.youtube.com/watch?v=R81GVja_kAs))
 
