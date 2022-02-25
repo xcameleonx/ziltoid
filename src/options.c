@@ -4,17 +4,16 @@
  * Basically just manage the options screen.
  **/
 
-#include <genesis.h>
 #include "global.h"
 #include "options.h"
 
-s16 o_frames = 0;
 void GameOptions()
 {
     GameOptions_Init();
 	while (game.loop)
     {
         JOY_setEventHandler(&GameOptions_HandleInput);
+        SYS_doVBlankProcess();
         if(game.exitCurrScene) 
         {
             SPR_reset();
@@ -23,7 +22,7 @@ void GameOptions()
             game.scene = GAME_TITLE;
         }
         GameOptions_Render();
-        o_frames++;
+        frame_timer++;
     }
 }
 
@@ -40,7 +39,7 @@ void GameOptions_Init()
     JOY_init();
 
     SPR_update();
-
+    frame_timer = 0;
     game.loop = TRUE;
     game.exitCurrScene = FALSE;
 }
@@ -67,18 +66,18 @@ void GameOptions_HandleInput(u16 joy, u16 changed, u16 state)
 
 void GameOptions_Render() 
 {
-    if (o_frames >= 60)
+    if (frame_timer >= 60)
     {
         SYS_disableInts();
         VDP_drawText("I AM THE OPTIONS SCREEN", 10, 20);
         SYS_enableInts();
         JOY_setEventHandler(GameOptions_HandleInput);
-        o_frames = 0;
+        frame_timer = 0;
     }
-    else if (o_frames == 30)
+    else if (frame_timer == 30)
     {
         SYS_disableInts();
-        VDP_clearTextArea(10, 20, 22, 1);
+        VDP_clearTextArea(10, 20, 23, 1);
         SYS_enableInts();
     }
     SPR_update();

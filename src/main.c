@@ -2,7 +2,6 @@
  * Ziltoid and The Quest for Coffee
  * main.c
  **/
-#include <genesis.h>
 #include "global.h"
 #include "title.h"
 #include "options.h"

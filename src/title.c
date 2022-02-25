@@ -4,17 +4,16 @@
  * Basically just manage the title screen.
  **/
 
-#include <genesis.h>
 #include "global.h"
 #include "title.h"
 
-s16 t_frames = 0;
 void GameTitle()
 {
     GameTitle_Init();
 	while (game.loop)
     {
         JOY_setEventHandler(&GameTitle_HandleInput);
+        SYS_doVBlankProcess();
         if(game.exitCurrScene) 
         {
             SPR_reset();
@@ -23,7 +22,7 @@ void GameTitle()
             game.scene = GAME_OPTION;
         }
         GameTitle_Render();
-        t_frames++;       
+        frame_timer++;       
         SPR_update();
         VDP_waitVSync();
     }
@@ -43,6 +42,7 @@ void GameTitle_Init()
 
     SPR_update();
 
+    frame_timer = 0;
     game.loop = TRUE;
     game.exitCurrScene = FALSE;
 }
@@ -69,14 +69,14 @@ void GameTitle_HandleInput(u16 joy, u16 changed, u16 state)
 
 void GameTitle_Render() 
 {
-    if (t_frames >= 60)
+    if (frame_timer >= 60)
     {
         SYS_disableInts();
         VDP_drawText("PRESS START BUTTON " , 10, 20);
         SYS_enableInts();
-        t_frames = 0;
+        frame_timer = 0;
     }
-    else if (t_frames == 30)
+    else if (frame_timer == 30)
     {
         SYS_disableInts();
         VDP_clearTextArea(10, 20, 18, 1);
