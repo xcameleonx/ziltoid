@@ -4,6 +4,8 @@ Mega Drive platformer based on the albums Ziltoid The Omniscient and Z<sup>2</su
 
 Inspired by the Earthworm Jim games.
 
+Built using [SGDK](https://github.com/Stephane-D/SGDK) 
+
 A very loose interpretation of the Ziltoid story, basically split in to three acts. Music listings are ideas for sections to be converted to tracks for level music.
 
 
