@@ -4,7 +4,7 @@ Mega Drive platformer based on the albums Ziltoid The Omniscient and Z<sup>2</su
 
 Inspired by the Earthworm Jim games.
 
-A very loose interpretation of the Ziltoid story, basically split in to three acts
+A very loose interpretation of the Ziltoid story, basically split in to three acts. Music listings are ideas for sections to be converted to tracks for level music.
 
 
 1. Ziltoid's invasion of Earth for the Utimate cup of Coffee 
@@ -32,5 +32,5 @@ End Credits ([The Greys](https://www.youtube.com/watch?v=YXDmFwUOkkk))
 | ----------- | ---------------------------------- |
 | A           | Jump                               |
 | B           | Throw Poozer (basic attack)        |
-| C           | Special (Collect coffee cups, then unleash a guitar attak) |
-| X, Y, Z     | ziltoid insults the playe          |
+| C           | Special (Collect coffee cups to fill the Coffee Gauge, then unleash a guitar attack) |
+| X, Y, Z     | ziltoid insults the player          |
