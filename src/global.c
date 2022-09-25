@@ -1,5 +1,16 @@
 #include "global.h"
 
+const fix16 gravityScale = FIX16(0.5);
+
+Map* bg;
+
+AABB roomSize;
+AABB playerBounds;
+
+u16 VDPTilesFilled = TILE_USER_INDEX;
+
+
+
 void Global_HandleInput(u16 joy, u16 changed, u16 state) 
 {
     KLog_U1("Entered the input handler: GLOBAL  ", 1);

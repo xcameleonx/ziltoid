@@ -1,7 +1,16 @@
 { 
-    "C_Cpp.default.includePath": ["${env:MARSDEV}\\sgdk\\SGDK\\inc",
-    "${env:MARSDEV}\\sgdk\\SGDK\\res",
-    "res",
-    "inc"
-]
+    "C_Cpp.default.includePath": [
+        "${env:MARSDEV}\\sgdk\\SGDK\\inc",
+        "${env:MARSDEV}\\sgdk\\SGDK\\res",
+        "res",
+        "inc",
+        "C:\\SDK\\sgdk180\\inc",
+        "C:\\SDK\\sgdk180\\res"
+    ],
+"files.associations": {
+    "global.h": "c",
+    "genesis.h": "c",
+    "player.h": "c",
+    "resources.h": "c"
+}
 }
